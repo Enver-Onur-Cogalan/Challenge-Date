@@ -8,10 +8,22 @@
     <h1>Challenge</h1>
     <script>
         function isWeekend(date) {
-            return false;
+            let weekendDate = new Date(date);
+            let day = weekendDate.getDay();
+
+            const days = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi']
+
+            let isWeekend = day === 0 || day === 6;
+
+            return {
+                date: date,
+                day: days[day],
+                isWeekend: isWeekend
+            };
         }
 
-        console.log(isWeekend("2020-01-18"))
+        console.log(isWeekend("2020-01-18")); // {date: "2020-01-18", day: "Cumartesi", isWeekend: true}
+        console.log(isWeekend('2025-03-04')); // {date: "2025-03-04", day: "Salı", isWeekend: false}
     </script>
 </body>
 

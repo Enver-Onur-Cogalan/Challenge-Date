@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" <head>
 <meta charset="UFT-8">
-<meta name="viewport" content="width-device-width" , initial-scale=1. <title>Date</title>
+<meta name="viewport" content="width-device-width" , initial-scale=1. <title>BirthDate</title>
 </head>
 
 <body>
     <h1>Challenge</h1>
     <script>
         function calculateAge(date) {
+            // Date of birth converted to 'Date' object
             let birthDate = new Date(date);
 
+            // Today's date received
             let today = new Date();
 
+            // Calculate the year difference
             let age = today.getFullYear() - birthDate.getFullYear();
 
+            // Check if the birthday has passed by comparing month and day
             let monthDiff = today.getMonth() - birthDate.getMonth();
             let dayDiff = today.getDate() - birthDate.getDate();
 
+            // If the birthday hasn't come yet this year, decrease the age by 1
             if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
                 age--;
             }
             return age;
         }
 
-        console.log(calculateAge("1990-06-15"));
-        console.log(calculateAge('2002-11-06'));
-        console.log(calculateAge('1995-03-04'));
+        console.log(calculateAge("1990-06-15")); // 34
+        console.log(calculateAge('2002-11-06')); // 22
+        console.log(calculateAge('1995-03-04')); //30
     </script>
 </body>
 
