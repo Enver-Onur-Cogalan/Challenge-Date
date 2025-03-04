@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" <head>
+<meta charset="UFT-8">
+<meta name="viewport" content="width-device-width" , initial-scale=1. <title>Date</title>
+</head>
+
+<body>
+    <h1>Challenge</h1>
+    <script>
+        function calculateAge(date) {
+            let birthDate = new Date(date);
+
+            let today = new Date();
+
+            let age = today.getFullYear() - birthDate.getFullYear();
+
+            let monthDiff = today.getMonth() - birthDate.getMonth();
+            let dayDiff = today.getDate() - birthDate.getDate();
+
+            if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                age--;
+            }
+            return age;
+        }
+
+        console.log(calculateAge("1990-06-15"));
+        console.log(calculateAge('2002-11-06'));
+        console.log(calculateAge('1995-03-04'));
+    </script>
+</body>
+
+</html>
